@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clock</title>
+    <link rel="icon" type="image/png" href="./Assets/icon.png" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="clock" aria-label="Digital clock">
+      <span id="hours">00</span>
+      <span class="separator">:</span>
+      <span id="minutes">00</span>
+      <span class="separator">:</span>
+      <span id="seconds">00</span>
+    </div>
+
+    <div class="todo-container" aria-label="To Do list app">
+      <h2>To Do List</h2>
+      <form id="todo-form" autocomplete="off" aria-label="Add a new task">
+        <div class="todo-input">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Add new task..."
+            aria-required="true"
+          />
+          <button type="submit" aria-label="Add task">Add</button>
+        </div>
+      </form>
+      <ul
+        class="todo-list"
+        id="todo-list"
+        aria-live="polite"
+        aria-relevant="additions removals"
+      ></ul>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

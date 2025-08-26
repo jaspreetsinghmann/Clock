@@ -1,0 +1,256 @@
+      @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+      body,
+      html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          background-color: #000;
+          color: #fff;
+          font-family: "Share Tech Mono", monospace;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          user-select: none;
+          -webkit-font-smoothing: antialiased;
+      }
+
+      .clock {
+          font-size: 8rem;
+          letter-spacing: 0.15em;
+          font-weight: 700;
+          margin-bottom: 40px;
+          display: flex;
+          gap: 20px;
+      }
+
+      .clock span {
+          background: #111;
+          border-radius: 8px;
+          padding: 0 12px;
+          box-shadow: inset 0 4px 6px rgba(255 255 255 / 0.2),
+              0 2px 10px rgba(255 255 255 / 0.1);
+          min-width: 76px;
+          text-align: center;
+          color: white;
+          position: relative;
+      }
+
+      .clock span.separator {
+          min-width: auto;
+          padding: 0;
+          align-self: flex-end;
+          font-size: 8rem;
+          line-height: 1;
+          opacity: 0.7;
+      }
+
+      .todo-container {
+          width: 360px;
+          max-width: 90vw;
+          background-color: #111;
+          padding: 25px 30px;
+          border-radius: 18px;
+          box-shadow: 0 0 32px #222;
+          transition: box-shadow 0.3s ease;
+      }
+
+      .todo-container:hover {
+          box-shadow: 0 0 48px #bbbbbbc9;
+      }
+
+      .todo-container h2 {
+          margin-top: 0;
+          margin-bottom: 1.5rem;
+          font-weight: 700;
+          font-size: 2rem;
+          text-align: center;
+          color: #f0f4f5;
+          text-shadow: 0 0 6px #000000bb;
+          letter-spacing: 0.06em;
+      }
+
+      .todo-input {
+          display: flex;
+          gap: 12px;
+          margin-bottom: 20px;
+      }
+
+      .todo-input input {
+          flex-grow: 1;
+          padding: 12px 16px;
+          font-size: 1.1rem;
+          border-radius: 12px;
+          border: none;
+          outline: none;
+          background: #222;
+          color: #fff;
+          box-shadow: inset 0 0 12px #eeeeee88;
+          transition: box-shadow 0.25s ease;
+      }
+
+      .todo-input input::placeholder {
+          color: #a7a7a7bb;
+      }
+
+      .todo-input button {
+          padding: 0 22px;
+          background: linear-gradient(135deg, #000000, #464646);
+          border: none;
+          border-radius: 12px;
+          cursor: pointer;
+          font-weight: 700;
+          font-size: 1.1rem;
+          color: #fff;
+          box-shadow: 0 4px 10px #555555aa;
+          transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .todo-input button:hover {
+          background: linear-gradient(135deg, #727272, #272727);
+          box-shadow: 0 6px 20px #000000cc;
+      }
+
+      ul.todo-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          max-height: 280px;
+          overflow-y: auto;
+      }
+
+      ul.todo-list li {
+          background: linear-gradient(135deg, #121414, #2f2f30);
+          color: white;
+          padding: 14px 18px;
+          margin-bottom: 12px;
+          border-radius: 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.1rem;
+          user-select: text;
+          opacity: 1;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      ul.todo-list li.removing {
+          opacity: 0;
+          transform: translateX(40px);
+      }
+
+      ul.todo-list li button {
+          background: transparent;
+          border: none;
+          font-size: 1.6rem;
+          color: #ff6666;
+          cursor: pointer;
+          font-weight: 700;
+          user-select: none;
+          transition: color 0.3s ease;
+      }
+
+      ul.todo-list li button:hover {
+          color: #ff3030;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+          .clock {
+              flex-wrap: wrap;
+              font-size: 4.5rem;
+              justify-content: center;
+              gap: 10px;
+              margin-bottom: 30px;
+          }
+
+          .clock span {
+              min-width: 50px;
+              padding: 0 8px;
+          }
+
+          .clock span.separator {
+              font-size: 4.5rem;
+              align-self: center;
+              opacity: 0.8;
+              display: none;
+          }
+
+          .todo-container {
+              width: 100%;
+              padding: 20px 16px;
+              border-radius: 14px;
+              box-shadow: 0 0 28px #222;
+          }
+
+          .todo-container h2 {
+              font-size: 1.6rem;
+              margin-bottom: 1rem;
+          }
+
+          .todo-input input {
+              font-size: 1rem;
+              padding: 10px 12px;
+          }
+
+          .todo-input button {
+              padding: 0 16px;
+              font-size: 1rem;
+          }
+
+          ul.todo-list li {
+              font-size: 1rem;
+              padding: 12px 14px;
+              margin-bottom: 10px;
+          }
+
+          ul.todo-list li button {
+              font-size: 1.3rem;
+          }
+      }
+
+      @media (min-width: 768px) and (max-width: 1024px) {
+          .clock {
+              font-size: 6rem;
+              gap: 14px;
+              margin-bottom: 35px;
+          }
+
+          .clock span.separator {
+              font-size: 6rem;
+          }
+
+          .todo-container {
+              width: 75%;
+              max-width: 500px;
+              padding: 22px 27px;
+              border-radius: 16px;
+          }
+
+          .todo-container h2 {
+              font-size: 1.75rem;
+              margin-bottom: 1.3rem;
+          }
+
+          .todo-input input {
+              font-size: 1.05rem;
+              padding: 11px 14px;
+          }
+
+          .todo-input button {
+              font-size: 1.05rem;
+              padding: 0 20px;
+          }
+
+          ul.todo-list li {
+              font-size: 1.05rem;
+              padding: 13px 16px;
+              margin-bottom: 11px;
+          }
+
+          ul.todo-list li button {
+              font-size: 1.4rem;
+          }
+      }
